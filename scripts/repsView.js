@@ -1,10 +1,12 @@
-$.getScript("https://apis.google.com/js/client.js?onload=load", function() {});
-http://openstates.org/api/v1/legislators/geo/?apikey=0029739b9483433f95c7036e042a4b4d&lat=25.75&long=-80.36
+// http://openstates.org/api/v1/legislators/geo/?apikey=0029739b9483433f95c7036e042a4b4d&lat=25.75&long=-80.36
 /**
  * Execute request to look up representative info for provided location.
  */
 
 //openState(25.75,-80.36);
+
+$.getScript("http://apis.google.com/js/client.js?onload=load", function() {});
+
 function openState(lat,long) {
     $.ajax({ 
         type: "GET",
@@ -16,18 +18,28 @@ function openState(lat,long) {
                 var response_list = response.offices[0];
                 var name, party, phone, site, photo;
                 var address = '';
+                var phone = "";
+                var email = "";
+                if (response.hasOwnProperty('offices'))  {
+                    response_list = response.offices;
                 
-                if (response.hasOwnProperty('offices'))
-                    response_list = response.offices
-                if (response_list.hasOwnProperty('address')) {
+                    if (response_list.hasOwnProperty('phone'))
+                        phone = response_list.phone;
+                    else
+                        phone = "";
+                    
+                    if (response_list.hasOwnProperty('address')) {
                     address = response_list.address + "<br> ";
                     address = formatLine(address);
                 }
-
+                
+                
+                }
                 var office_name = "Florida State Legislature";
                 
-                if (response.hasOwnProperty('full_name'))
-                    name = response.name;
+                if (response.hasOwnProperty('full_name')) {
+                    name = response.full_name;
+                }
                 else
                     name = "";
 
@@ -36,13 +48,9 @@ function openState(lat,long) {
                 else
                     party = "";
             
-                if (response_list.hasOwnProperty('phone'))
-                    phone = response_list.phone;
-                else
-                    phone = "";
 
-                if (response_list.hasOwnProperty('url'))
-                    site = truncate(response_list.url);
+                if (response.hasOwnProperty('url'))
+                    site = truncate(response.url);
                 else
                     site = "";
 
@@ -50,7 +58,7 @@ function openState(lat,long) {
                     photo = 'src=' + '"' + response.photo_url + '"';
                 else
                     photo = false;
-
+                
                 var repNode = writeRepNode(name, office_name, party, phone, site, photo, address);
 
                 $("#state").append(repNode);
@@ -111,7 +119,7 @@ function writeRepNode(name, officeName, party, phone, site, photo, address) {
 function renderResults(response, rawResponse) {
     var locationId = document.getElementById('locationBlock');
     if (!response || response.error || response.status !== 'success') {
-        locationId.innerHTML = '<div class = "alert alert-danger">Sorry, we were unable to locate information for the address entered. <a href = "index.jsp" class = "alert-link"><br>Try again?</a></div>';
+        locationId.innerHTML = '<div class = "alert alert-danger">Sorry, we were unable to locate information for the address entered. <a href = "index.html" class = "alert-link"><br>Try again?</a></div>';
         return;
     }
 

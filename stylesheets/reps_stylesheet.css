@@ -127,7 +127,7 @@ body {
 }
 
 select {
-    -webkit-appearance: none !important;
+    #-webkit-appearance: none !important;
 
     background-position-x: 97%;
     background-position-y: center;
