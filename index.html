@@ -63,16 +63,33 @@
                     <div class="form-group" style="width:240px;">
                         <label class="sr-only" for="dropdownCity">City</label>
                         <select class="form-control form-font" id="dropdownCity" name="dropdownCity">
-                            <option>Miami</option><option>Aventura</option>
-                            <option>Bal Harbour</option><option>Bay Harbor Islands</option><option>Biscayne Park</option>
-                            <option>Coral Gables</option><option>Doral</option><option>El Portal</option>
-                            <option>Florida City</option><option>Golden Beach</option><option>Homestead</option>
-                            <option>Key Biscayne</option><option>Medley</option>
-                            <option>Miami Beach</option><option>Miami Gardens</option><option>Miami Shores Village</option>
-                            <option>Miami Springs</option><option>North Bay Village</option><option>North Miami</option>
-                            <option>North Miami Beach</option><option>Opa-Locka</option><option>Pinecrest </option>
-                            <option>South Miami</option><option>Sunny Isles Beach</option><option>Surfside</option>
-                            <option>Sweetwater</option><option>Virginia Gardens</option>
+                            <option value="Miami">Miami</option>
+                            <option value="Aventura">Aventura</option>
+                            <option value="Bal Harbour">Bal Harbour</option>
+                            <option value="Bay Harbor Islands">Bay Harbor Islands</option>
+                            <option value="Biscayne Park">Biscayne Park</option>
+                            <option value="Coral Gables">Coral Gables</option>
+                            <option value="Doral">Doral</option>
+                            <option value="El Portal">El Portal</option>
+                            <option value="Florida City">Florida City</option>
+                            <option value="Golden Beach">Golden Beach</option>
+                            <option value="Homestead">Homestead</option>
+                            <option value="Key Biscayne">Key Biscayne</option>
+                            <option value="Medley">Medley</option>
+                            <option value="Miami Beach">Miami Beach</option>
+                            <option value="Miami Gardens">Miami Gardens</option>
+                            <option value="Miami Shores Village">Miami Shores Village</option>
+                            <option value="Miami Springs">Miami Springs</option>
+                            <option value="North Bay Village">North Bay Village</option>
+                            <option value="North Miami">North Miami</option>
+                            <option value="North Miami Beach">North Miami Beach</option>
+                            <option value="Opa-Locka">Opa-Locka</option>
+                            <option value="Pinecrest">Pinecrest</option>
+                            <option value="South Miami">South Miami</option>
+                            <option value="Sunny Isles Beach">Sunny Isles Beach</option>
+                            <option value="Surfside">Surfside</option>
+                            <option value="Sweetwater">Sweetwater</option>
+                            <option value="Virginia Gardens">Virginia Gardens</option>
                         </select>
                     </div>
                     <button type='button' name="searchButton" id="searchButton" class="btn btn-primary1 form-font" onClick="getUserAddress()"><span class="glyphicon glyphicon-search"></span></button>
@@ -90,9 +107,17 @@
         <div id="locationInput"></div>
 
         <!-- Bootstrap core JavaScript -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
         <script src="libs/bootstrap/js/bootstrap.min.js"></script>
-        <script src ="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADM4Mf5itCsl7xSgP3yNvZLntO5ggF8Zg&sensor=true"></script>
         <script src="scripts/userLocation.js"></script>
+        <script>
+        $("#inputAddress").keypress(function(e) {
+             if(e.which === 13) {
+                 getUserAddress();
+                 e.preventDefault();
+                }
+        });
+        </script>
     </body>
 </html>

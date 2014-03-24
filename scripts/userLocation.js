@@ -1,7 +1,7 @@
 
 function createSubmitForm(address) {
-    var str_form = '<form id ="dynamicForm" method ="get" action="repsView.html" role="form"><input type= "hidden" id = "inputAddress" name="inputAddress" value ="' + address + '"></form>';
-    document.getElementById('locationInput').innerHTML = str_form;
+    var str_form = '<form id = "dynamicForm" method = "get" action= "repsView.html" role= "form"><input type= "hidden" id = "inputAddress" name = "inputAddress" value = " ' +address + ' "></form>';;
+    document.getElementById('locationInput').innerHTML = str_form; 
     document.getElementById('dynamicForm').submit();
 }
 
@@ -21,7 +21,7 @@ function writeAddressName(latLng) {
                 var len = component.length;
                 var addr = 'error';
                 for ( var i = 0; i < len; ++i ) {
-                    if (component[i].long_name.indexOf('Miami-Dade') !== -1) {
+                    if (component[i].long_name === 'Miami-Dade County') {
                         addr = field.formatted_address;
                         console.log(component[i].long_name);
                         break;
@@ -41,10 +41,9 @@ function geolocateUser() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
             var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-           // alert(pos);
-            writeAddressName(pos);
+            writeAddressName(pos); //comment this line to stop the page from reload when debugging 
         });
+    } else {
+        alert('Error: The Geolocation service failed.');
     }
-    else
-        console.log('Error: The Geolocation service failed.');
 }

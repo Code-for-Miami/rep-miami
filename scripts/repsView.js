@@ -1,10 +1,12 @@
-$.getScript("https://apis.google.com/js/client.js?onload=load", function() {});
-//http://openstates.org/api/v1/legislators/geo/?apikey=0029739b9483433f95c7036e042a4b4d&lat=25.75&long=-80.36
+// http://openstates.org/api/v1/legislators/geo/?apikey=0029739b9483433f95c7036e042a4b4d&lat=25.75&long=-80.36
 /**
  * Execute request to look up representative info for provided location.
  */
 
 //openState(25.75,-80.36);
+
+$.getScript("http://apis.google.com/js/client.js?onload=load", function() {});
+
 function openState(lat,long) {
     $.ajax({ 
         type: "GET",
