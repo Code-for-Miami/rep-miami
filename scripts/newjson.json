@@ -1,0 +1,416 @@
+[
+    {
+        "last_name": "Diaz",
+        "updated_at": "2014-02-03 01:15:22",
+        "sources": [
+            {
+                "url": "http://www.flhouse.gov/Sections/Representatives/representatives.aspx"
+            }, {
+                "url": "http://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=4526&SessionId=75"
+            }
+        ],
+        "full_name": "Jose Felix Diaz",
+        "old_roles": {
+            "2011-2012": [
+                {
+                    "term": "2011-2012",
+                    "end_date": null,
+                    "district": "115",
+                    "chamber": "lower",
+                    "state": "fl",
+                    "party": "Republican",
+                    "type": "member",
+                    "start_date": null
+                },
+                {
+                    "term": "2011-2012",
+                    "committee_id": "FLC000063",
+                    "chamber": "lower",
+                    "state": "fl",
+                    "subcommittee": "Health Care Appropriations",
+                    "committee": "Appropriations",
+                    "position": "member",
+                    "type": "committee member"
+                },
+                {
+                    "term": "2011-2012",
+                    "committee_id": "FLC000070",
+                    "chamber": "lower",
+                    "state": "fl",
+                    "subcommittee": "Community & Military Affairs",
+                    "committee": "Economic Affairs",
+                    "position": "Vice Chair",
+                    "type": "committee member"
+                },
+                {
+                    "term": "2011-2012",
+                    "committee_id": "FLC000077",
+                    "chamber": "lower",
+                    "state": "fl",
+                    "subcommittee": null,
+                    "committee": "Finance & Tax",
+                    "position": "member",
+                    "type": "committee member"
+                },
+                {
+                    "term": "2011-2012",
+                    "committee_id": "FLC000079",
+                    "chamber": "lower",
+                    "state": "fl",
+                    "subcommittee": "Health & Human Services Access",
+                    "committee": "Health & Human Services",
+                    "position": "member",
+                    "type": "committee member"
+                },
+                {
+                    "term": "2011-2012",
+                    "committee_id": "FLC000083",
+                    "chamber": "lower",
+                    "state": "fl",
+                    "subcommittee": "Criminal Justice",
+                    "committee": "Judiciary",
+                    "position": "member",
+                    "type": "committee member"
+                },
+                {
+                    "term": "2011-2012",
+                    "committee_id": "FLC000054",
+                    "chamber": "lower",
+                    "state": "fl",
+                    "subcommittee": "House Redistricting",
+                    "committee": "Redistricting",
+                    "position": "member",
+                    "type": "committee member"
+                }
+            ]
+        },
+        "id": "FLL000071",
+        "first_name": "Jose Felix",
+        "middle_name": "",
+        "district": "116",
+        "state": "fl",
+        "votesmart_id": "117077",
+        "boundary_id": "sldl/fl-116",
+        "all_ids": [
+            "FLL000071",
+            "FLL000232"
+        ],
+        "leg_id": "FLL000071",
+        "party": "Republican",
+        "active": true,
+        "transparencydata_id": "61bb4f4d0bbb481d911f41877c0603b9",
+        "photo_url": "http://www.flhouse.gov/FileStores/Web/Imaging/Member/4526.jpg",
+        "roles": [
+            {
+                "term": "2013-2014",
+                "end_date": null,
+                "district": "116",
+                "chamber": "lower",
+                "state": "fl",
+                "party": "Republican",
+                "type": "member",
+                "start_date": null
+            },
+            {
+                "term": "2013-2014",
+                "committee_id": "FLC000124",
+                "chamber": "lower",
+                "state": "fl",
+                "subcommittee": null,
+                "committee": "Regulatory Affairs",
+                "position": "member",
+                "type": "committee member"
+            },
+            {
+                "term": "2013-2014",
+                "committee_id": "FLC000094",
+                "chamber": "joint",
+                "state": "fl",
+                "subcommittee": null,
+                "committee": "Joint Committee on Public Counsel Oversight",
+                "position": "member",
+                "type": "committee member"
+            },
+            {
+                "term": "2013-2014",
+                "committee_id": "FLC000063",
+                "chamber": "lower",
+                "state": "fl",
+                "subcommittee": "Health Care Appropriations",
+                "committee": "Appropriations",
+                "position": "member",
+                "type": "committee member"
+            },
+            {
+                "term": "2013-2014",
+                "committee_id": "FLC000134",
+                "chamber": "lower",
+                "state": "fl",
+                "subcommittee": null,
+                "committee": "Select Committee on Gaming",
+                "position": "member",
+                "type": "committee member"
+            },
+            {
+                "term": "2013-2014",
+                "committee_id": "FLC000131",
+                "chamber": "lower",
+                "state": "fl",
+                "subcommittee": "Ethics & Elections",
+                "committee": "State Affairs",
+                "position": "member",
+                "type": "committee member"
+            },
+            {
+                "term": "2013-2014",
+                "committee_id": "FLC000126",
+                "chamber": "lower",
+                "state": "fl",
+                "subcommittee": "Energy & Utilities",
+                "committee": "Regulatory Affairs",
+                "position": "member",
+                "type": "committee member"
+            }
+        ],
+        "url": "http://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=4526&SessionId=75",
+        "country": "us",
+        "created_at": "2011-03-02 21:41:52",
+        "level": "state",
+        "chamber": "lower",
+        "offices": [
+            {
+                "fax": null,
+                "name": "Capitol Office",
+                "phone": "(850) 717-5116",
+                "address": "303 House Office Building\n402 South Monroe Street\nTallahassee, FL 32399-1300",
+                "type": "capitol",
+                "email": null
+            },
+            {
+                "fax": null,
+                "name": "District Office",
+                "phone": "(305) 442-6800",
+                "address": "7901 Southwest 24th Street\nMiami, FL 33155-6524",
+                "type": "district",
+                "email": null
+            }
+        ],
+        "suffixes": ""
+    },
+    
+    
+    {
+        "last_name": "Flores",
+        "updated_at": "2014-02-03 01:15:54",
+        "sources": [
+            {
+                "url": "http://www.flsenate.gov/Senators/"
+            },
+            {
+                "url": "http://www.flsenate.gov/Senators/s37"
+            }
+        ],
+        "full_name": "Anitere Flores",
+        "old_roles": {
+            "2011-2012": [
+                {
+                    "term": "2011-2012",
+                    "end_date": null,
+                    "district": "38",
+                    "chamber": "upper",
+                    "state": "fl",
+                    "party": "Republican",
+                    "type": "member",
+                    "start_date": null
+                },
+                {
+                    "term": "2011-2012",
+                    "committee_id": "FLC000003",
+                    "chamber": "upper",
+                    "state": "fl",
+                    "subcommittee": null,
+                    "committee": "Budget",
+                    "position": "member",
+                    "type": "committee member"
+                },
+                {
+                    "term": "2011-2012",
+                    "committee_id": "FLC000005",
+                    "chamber": "upper",
+                    "state": "fl",
+                    "subcommittee": "Education Pre-K - 12 Appropriations",
+                    "committee": "Budget",
+                    "position": "member",
+                    "type": "committee member"
+                },
+                {
+                    "term": "2011-2012",
+                    "committee_id": "FLC000012",
+                    "chamber": "upper",
+                    "state": "fl",
+                    "subcommittee": null,
+                    "committee": "Commerce and Tourism",
+                    "position": "member",
+                    "type": "committee member"
+                },
+                {
+                    "term": "2011-2012",
+                    "committee_id": "FLC000013",
+                    "chamber": "upper",
+                    "state": "fl",
+                    "subcommittee": null,
+                    "committee": "Communications, Energy, and Public Utilities",
+                    "position": "member",
+                    "type": "committee member"
+                },
+                {
+                    "term": "2011-2012",
+                    "committee_id": "FLC000018",
+                    "chamber": "upper",
+                    "state": "fl",
+                    "subcommittee": null,
+                    "committee": "Governmental Oversight and Accountability",
+                    "position": "member",
+                    "type": "committee member"
+                },
+                {
+                    "term": "2011-2012",
+                    "committee_id": "FLC000021",
+                    "chamber": "upper",
+                    "state": "fl",
+                    "subcommittee": null,
+                    "committee": "Judiciary",
+                    "position": "chair",
+                    "type": "committee member"
+                },
+                {
+                    "term": "2011-2012",
+                    "committee_id": "FLC000023",
+                    "chamber": "upper",
+                    "state": "fl",
+                    "subcommittee": null,
+                    "committee": "Reapportionment",
+                    "position": "member",
+                    "type": "committee member"
+                },
+                {
+                    "term": "2011-2012",
+                    "committee_id": "FLC000025",
+                    "chamber": "upper",
+                    "state": "fl",
+                    "subcommittee": null,
+                    "committee": "Rules",
+                    "position": "member",
+                    "type": "committee member"
+                }
+            ]
+        },
+        "id": "FLL000014",
+        "first_name": "Anitere",
+        "middle_name": "",
+        "district": "37",
+        "state": "fl",
+        "votesmart_id": "30818",
+        "boundary_id": "sldu/fl-37",
+        "email": "flores.anitere.web@flsenate.gov",
+        "all_ids": [
+            "FLL000014",
+            "FLL000179"
+        ],
+        "leg_id": "FLL000014",
+        "party": "Republican",
+        "active": true,
+        "transparencydata_id": "dcc942504433438db894c0e269b6dc4d",
+        "photo_url": "http://www.flsenate.gov/PublishedContent/Senators/2012-2014/Photos/s37_4783.jpg",
+        "roles": [
+            {
+                "term": "2013-2014",
+                "end_date": null,
+                "district": "37",
+                "chamber": "upper",
+                "state": "fl",
+                "party": "Republican",
+                "type": "member",
+                "start_date": null
+            },
+            {
+                "term": "2013-2014",
+                "committee_id": "FLC000112",
+                "chamber": "upper",
+                "state": "fl",
+                "subcommittee": null,
+                "committee": "Select Committee on Patient Protection and Affordable Care Act",
+                "position": "member",
+                "type": "committee member"
+            },
+            {
+                "term": "2013-2014",
+                "committee_id": "FLC000106",
+                "chamber": "upper",
+                "state": "fl",
+                "subcommittee": "Health and Human Services",
+                "committee": "Appropriations",
+                "position": "chair",
+                "type": "committee member"
+            },
+            {
+                "term": "2013-2014",
+                "committee_id": "FLC000109",
+                "chamber": "upper",
+                "state": "fl",
+                "subcommittee": null,
+                "committee": "Ethics and Elections",
+                "position": "member",
+                "type": "committee member"
+            },
+            {
+                "term": "2013-2014",
+                "committee_id": "FLC000013",
+                "chamber": "upper",
+                "state": "fl",
+                "subcommittee": null,
+                "committee": "Communications, Energy, and Public Utilities",
+                "position": "chair",
+                "type": "committee member"
+            },
+            {
+                "term": "2013-2014",
+                "committee_id": "FLC000111",
+                "chamber": "upper",
+                "state": "fl",
+                "subcommittee": null,
+                "committee": "Health Policy",
+                "position": "member",
+                "type": "committee member"
+            },
+            {
+                "term": "2013-2014",
+                "committee_id": "FLC000102",
+                "chamber": "upper",
+                "state": "fl",
+                "subcommittee": "Criminal and Civil Justice",
+                "committee": "Appropriations",
+                "position": "member",
+                "type": "committee member"
+            },
+            {
+                "term": "2013-2014",
+                "committee_id": "FLC000024",
+                "chamber": "upper",
+                "state": "fl",
+                "subcommittee": null,
+                "committee": "Regulated Industries",
+                "position": "member",
+                "type": "committee member"
+            }
+        ],
+        "url": "http://www.flsenate.gov/Senators/s37",
+        "country": "us",
+        "created_at": "2011-03-02 21:41:52",
+        "level": "state",
+        "chamber": "upper",
+        "offices": [
+        ],
+        "suffixes": ""
+    }
+]
