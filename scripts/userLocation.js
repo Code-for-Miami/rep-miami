@@ -14,30 +14,28 @@ function writeAddressName(latLng) {
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode({
       "location": latLng
-    },  function(results, status) {
-            if (status === google.maps.GeocoderStatus.OK){
-                var field = results[0];
-                var component = field.address_components;
-                var len = component.length;
-                var addr = 'error';
-                for ( var i = 0; i < len; ++i ) {
-                    if (component[i].long_name === 'Miami-Dade County') {
-                        addr = field.formatted_address;
-                        console.log(component[i].long_name);
-                        break;
-                    }
+  },  function(results, status) {
+        if (status === google.maps.GeocoderStatus.OK) {
+            var field = results[0];
+            var component = field.address_components;
+            var len = component.length;
+            var addr = 'error';
+            for ( var i = 0; i < len; ++i ) {
+                if (component[i].long_name === 'Miami-Dade County') {
+                    addr = field.formatted_address;
+                    break;
                 }
-                createSubmitForm(addr);
             }
-            else
-                console.log('Location search was unsuccesful. Error : ' + status);
-        });
+            createSubmitForm(addr);
+        } else 
+        alert('Location search was unsuccesful. Error : ' + status);
+    });
 }
 
 /*
  * Make request to Google Maps Geocoder API
  */
-function geolocateUser() {
+ function geolocateUser() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
             var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
