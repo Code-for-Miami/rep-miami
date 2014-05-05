@@ -22,59 +22,54 @@ function openState(lat,long) {
                 var email = "";
                 if (response.hasOwnProperty('offices'))  {
                     response_list = response.offices;
-                    
+                
                     if (response_list.hasOwnProperty('phone'))
                         phone = response_list.phone;
                     else
                         phone = "";
                     
                     if (response_list.hasOwnProperty('address')) {
-                        address = response_list.address + "<br> ";
-                        address = formatLine(address);
-                    }
-                    
-                    
+                    address = response_list.address + "<br> ";
+                    address = formatLine(address);
+                }
+                
+                
                 }
                 var office_name = "Florida State Legislature";
-
-                if (response_list.hasOwnProperty('phone'))
-                    phone = response_list.phone;
+                
+                if (response.hasOwnProperty('full_name')) {
+                    name = response.full_name;
+                }
                 else
-                   phone = "";
-               
-               if (response.hasOwnProperty('full_name')) {
-                name = response.full_name;
+                    name = "";
+
+                if (response.hasOwnProperty('party'))
+                    party = " - " + response.party;
+                else
+                    party = "";
+            
+
+                if (response.hasOwnProperty('url'))
+                    site = truncate(response.url);
+                else
+                    site = "";
+
+                if (response.hasOwnProperty('photo_url'))
+                    photo = 'src=' + '"' + response.photo_url + '"';
+                else
+                    photo = false;
+                
+                var repNode = writeRepNode(name, office_name, party, phone, site, photo, address);
+
+                $("#state").append(repNode);
+                   
             }
-            else
-                name = "";
-
-            if (response.hasOwnProperty('party'))
-                party = " - " + response.party;
-            else
-                party = "";
-            
-
-            if (response.hasOwnProperty('url'))
-                site = truncate(response.url);
-            else
-                site = "";
-
-            if (response.hasOwnProperty('photo_url'))
-                photo = 'src=' + '"' + response.photo_url + '"';
-            else
-                photo = false;
-            
-            var repNode = writeRepNode(name, office_name, party, phone, site, photo, address);
-
-            $("#state").append(repNode);
-            
-        }
        // offices.push({"name" : "Florida Legislature", "level":"city"});
     //members[key] = { "name" : response.full_name, "address":[{"locationName": "response_list.address" }],
           //  "party" : response.party, "phones": [response_list.phone], "urls" : response_list.url, "photoUrl": response.photo_url };
        // alert(value.full_name);
    }
-   
+    
    
 });
 
@@ -121,8 +116,8 @@ function writeRepNode(name, officeName, party, phone, site, photo, address) {
 /**
  * Format and render results in the DOM.
  */
- function renderResults(response, rawResponse) {
-    var locationId = $('#locationBlock');
+function renderResults(response, rawResponse) {
+    var locationId = document.getElementById('locationBlock');
     if (!response || response.error || response.status !== 'success') {
         locationId.innerHTML = '<div class = "alert alert-danger">Sorry, we were unable to locate information for the address entered. <a href = "index.html" class = "alert-link"><br>Try again?</a></div>';
         return;
@@ -130,17 +125,17 @@ function writeRepNode(name, officeName, party, phone, site, photo, address) {
 
     var inputObj = response.normalizedInput;
     var normalizedAddress = inputObj.line1 + ', ' + inputObj.city + ' ' +
-    inputObj.state + ' ' + inputObj.zip;
+            inputObj.state + ' ' + inputObj.zip;
 
     locationId.innerHTML = '<strong>' +
-    formatLine(normalizedAddress) + '</strong>';
+            formatLine(normalizedAddress) + '</strong>';
 
     var divisionObj = response.divisions;
     for (var key in divisionObj) {
         var value = divisionObj[key];
         if (value.scope === "congressional") {
-            $('#sectionDiv').innerHTML = '<p>' +
-            formatLine(value.name) + '<br></p>';
+            document.getElementById('sectionDiv').innerHTML = '<p>' +
+                    formatLine(value.name) + '<br></p>';
         }
     }
 
@@ -163,85 +158,85 @@ function writeRepNode(name, officeName, party, phone, site, photo, address) {
     var officialsObj = response.officials;
     
   //  openState(25.75,-80.36, officialsObj, officeArr);
-  
-  for (var key in officialsObj) {
-    var value = officialsObj[key];
+    
+    for (var key in officialsObj) {
+        var value = officialsObj[key];
 
-    if (value.name !== "Barack Hussein Obama II"
-        && value.name !== "Joseph (Joe) Robinette Biden Jr.") {
-        var name, party, phone, site, photo;
-    var address = '';
+        if (value.name !== "Barack Hussein Obama II"
+                && value.name !== "Joseph (Joe) Robinette Biden Jr.") {
+            var name, party, phone, site, photo;
+            var address = '';
 
-    if (value.hasOwnProperty('address')) {
-        var addr = value.address[0];
+            if (value.hasOwnProperty('address')) {
+                var addr = value.address[0];
 
-        if (addr.hasOwnProperty('line1'))
-            address += addr.line1 + "<br> ";
-        if (addr.hasOwnProperty('city'))
-            address += addr.city;
-        if (addr.hasOwnProperty('state'))
-            address += ", " + addr.state;
-        if (addr.hasOwnProperty('zip'))
-            address += " " + addr.zip;
+                if (addr.hasOwnProperty('line1'))
+                    address += addr.line1 + "<br> ";
+                if (addr.hasOwnProperty('city'))
+                    address += addr.city;
+                if (addr.hasOwnProperty('state'))
+                    address += ", " + addr.state;
+                if (addr.hasOwnProperty('zip'))
+                    address += " " + addr.zip;
 
-        address = formatLine(address);
+                address = formatLine(address);
+            }
+
+            var thisOffice = officeArr[k++];
+            var officeLevel = thisOffice.level;
+            var officeName = thisOffice.name;
+
+            if (value.hasOwnProperty('name'))
+                name = value.name;
+            else
+                name = "";
+
+            if (value.hasOwnProperty('party'))
+                party = " - " + value.party;
+            else
+                party = "";
+
+            if (value.hasOwnProperty('phones'))
+                phone = value.phones[0];
+            else
+                phone = "";
+
+            if (value.hasOwnProperty('urls'))
+                site = truncate(value.urls[0]);
+            else
+                site = "";
+
+            if (value.hasOwnProperty('photoUrl'))
+                photo = 'src=' + '"' + value.photoUrl + '"';
+            else
+                photo = false;
+
+            var repNode = writeRepNode(name, officeName, party,
+                    phone, site, photo, address);
+
+            switch (officeLevel) {
+                case 'city' :
+                    $("#city+other").append(repNode);
+                    break;
+                case 'county' :
+                    $("#county").append(repNode);
+                    break;
+                case 'federal' :
+                    $("#federal").append(repNode);
+                    break;
+                case 'other' :
+                    $("#city+other").append(repNode);
+                    break;
+                case 'state' :
+                    $("#state").append(repNode);
+                    break;
+                default :
+                    break;
+            }
+        }
     }
-
-    var thisOffice = officeArr[k++];
-    var officeLevel = thisOffice.level;
-    var officeName = thisOffice.name;
-
-    if (value.hasOwnProperty('name'))
-        name = value.name;
-    else
-        name = "";
-
-    if (value.hasOwnProperty('party'))
-        party = " - " + value.party;
-    else
-        party = "";
-
-    if (value.hasOwnProperty('phones'))
-        phone = value.phones[0];
-    else
-        phone = "";
-
-    if (value.hasOwnProperty('urls'))
-        site = truncate(value.urls[0]);
-    else
-        site = "";
-
-    if (value.hasOwnProperty('photoUrl'))
-        photo = 'src=' + '"' + value.photoUrl + '"';
-    else
-        photo = false;
-
-    var repNode = writeRepNode(name, officeName, party,
-                               phone, site, photo, address);
-
-    switch (officeLevel) {
-        case 'city' :
-        $("#city+other").append(repNode);
-        break;
-        case 'county' :
-        $("#county").append(repNode);
-        break;
-        case 'federal' :
-        $("#federal").append(repNode);
-        break;
-        case 'other' :
-        $("#city+other").append(repNode);
-        break;
-        case 'state' :
-        $("#state").append(repNode);
-        break;
-        default :
-        break;
-    }
-}
-}
-
-openState(25.75,-80.36);
+    
+    openState(25.75,-80.36);
 }
 
 function parseUrl(str) {
@@ -259,7 +254,7 @@ function parseUrl(str) {
  * Initialize the Google Civic Information API client, and make a request.
  */
 
- function load() {
+function load() {
     gapi.client.setApiKey('AIzaSyCN9rkEJ848kuw9-YO7vZ41Mt7v2bhckcs');
     var addr = parseUrl('inputAddress');
     lookup(addr, renderResults);

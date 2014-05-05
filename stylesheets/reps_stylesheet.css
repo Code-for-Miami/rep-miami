@@ -13,7 +13,7 @@ body {
     font-family: arial,sans-serif;
     min-width: 1000px;
     overflow-x: auto;
-    overflow-y: hidden;
+    /*overflow-y: hidden;*/
 }
 
 .c4mblue { color: #399fd3; }
