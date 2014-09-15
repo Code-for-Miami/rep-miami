@@ -1,10 +1,3 @@
-// http://openstates.org/api/v1/legislators/geo/?apikey=0029739b9483433f95c7036e042a4b4d&lat=25.75&long=-80.36
-/**
- * Execute request to look up representative info for provided location.
- */
-
-//openState(25.75,-80.36);
-
 $.getScript("http://apis.google.com/js/client.js?onload=load", function() {});
 
 function openState(lat,long) {
@@ -64,13 +57,7 @@ function openState(lat,long) {
                 $("#state").append(repNode);
                    
             }
-       // offices.push({"name" : "Florida Legislature", "level":"city"});
-    //members[key] = { "name" : response.full_name, "address":[{"locationName": "response_list.address" }],
-          //  "party" : response.party, "phones": [response_list.phone], "urls" : response_list.url, "photoUrl": response.photo_url };
-       // alert(value.full_name);
    }
-    
-   
 });
 
 }
@@ -117,7 +104,7 @@ function writeRepNode(name, officeName, party, phone, site, photo, address) {
  * Format and render results in the DOM.
  */
 function renderResults(response, rawResponse) {
-    var locationId = document.getElementById('locationBlock');
+    var locationId = $('#locationBlock')[0];
     if (!response || response.error || response.status !== 'success') {
         locationId.innerHTML = '<div class = "alert alert-danger">Sorry, we were unable to locate information for the address entered. <a href = "index.html" class = "alert-link"><br>Try again?</a></div>';
         return;
@@ -134,15 +121,12 @@ function renderResults(response, rawResponse) {
     for (var key in divisionObj) {
         var value = divisionObj[key];
         if (value.scope === "congressional") {
-            document.getElementById('sectionDiv').innerHTML = '<p>' +
+            $('#sectionDiv')[0].innerHTML = '<p>' +
                     formatLine(value.name) + '<br></p>';
         }
     }
 
     var officeArr = [];
-    //var officialsObj = response.officials;
-    //openState(25.75,-80.36, officialsObj, officeArr);
-    
     var officeObj = response.offices;
     for (var key in officeObj) {
         var value = officeObj[key];
@@ -156,9 +140,7 @@ function renderResults(response, rawResponse) {
 
     var k = 0;
     var officialsObj = response.officials;
-    
-  //  openState(25.75,-80.36, officialsObj, officeArr);
-    
+
     for (var key in officialsObj) {
         var value = officialsObj[key];
 
@@ -235,8 +217,6 @@ function renderResults(response, rawResponse) {
             }
         }
     }
-    
-    openState(25.75,-80.36);
 }
 
 function parseUrl(str) {
