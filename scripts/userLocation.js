@@ -1,12 +1,12 @@
 
 function createSubmitForm(address) {
-    var str_form = '<form id = "dynamicForm" method = "get" action= "repsView.html" role= "form"><input type= "hidden" id = "inputAddress" name = "inputAddress" value = " ' +address + ' "></form>';;
+    var str_form = '<form id="dynamicForm" method="get" action="repsView.html" role="form"><input type="hidden" id="inputAddress" name = "inputAddress" value = "' +address + '"></form>';;
     $('#locationInput')[0].innerHTML = str_form; 
     $('#dynamicForm')[0].submit();
 }
 
 function getUserAddress() {
-    var user_location = $("#inputAddress").value +", " + $("#dropdownCity option:selected").value + " FL";
+    var user_location = $("#inputAddress").val() +", " + $("#dropdownCity option:selected").val() + " FL";
     createSubmitForm(user_location);
 }
 
